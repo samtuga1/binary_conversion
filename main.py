@@ -1,16 +1,29 @@
-numToConvert = int(input('What number do you want to convert ? : '))
-print('\n')
+def conversion_process():
+    num_to_convert = int(input('What number do you want to convert ? : '))
+    print('\n')
 
-listOfTypes = ['bin', 'oct', 'hex']
+    list_of_types = ['bin', 'oct', 'hex']
 
-conversionType = input(f'Convert to ? {listOfTypes}: ')
-print('\n')
+    conversion_type = input(f'Convert to ? {list_of_types}: ')
+    print('\n')
 
-if conversionType == 'bin':
-    print(f'The answer is {bin(numToConvert)}')
-elif conversionType == 'oct':
-    print(f'The answer is {oct(numToConvert)}')
-elif conversionType == 'hex':
-    print(f'The answer is {hex(numToConvert)}')
-else:
-    print('Invalid conversion type')
+    if conversion_type == 'bin':
+        print(f'The answer is {bin(num_to_convert)}')
+        print('\n')
+    elif conversion_type == 'oct':
+        print(f'The answer is {oct(num_to_convert)}')
+        print('\n')
+    elif conversion_type == 'hex':
+        print(f'The answer is {hex(num_to_convert)}')
+        print('\n')
+    else:
+        print('Invalid conversion type')
+    restart_process = input('Do you want to re-run the code again? y/n : ')
+    print('\n')
+    if restart_process == 'y':
+        conversion_process()
+    elif restart_process == 'n':
+        quit()
+
+
+conversion_process()
